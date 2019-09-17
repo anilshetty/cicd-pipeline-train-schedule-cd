@@ -8,6 +8,13 @@ pipeline {
                 archiveArtifacts artifacts: 'dist/trainSchedule.zip'
             }
         }
+        stage('Test') {
+            steps {
+                echo 'Running BAT'
+                sh 'java -version'
+                
+            }
+        }
         stage('DeployToStaging') {
             when {
                 branch 'master'
